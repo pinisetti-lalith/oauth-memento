@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Josefin+Sans&family=Permanent+Marker&family=Piedra&display=swap" rel="stylesheet">
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background:url("https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+		background-size: cover;
+		background-blend-mode: darken;
+	}
+	.container{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 90vh
+	}
+	.box{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width:800px;
+		}
+	.content{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 30px;
+		padding:50px;
+	}
+	.heading{
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 30px;
+	}
+	.content a{
+		text-decoration: none;
+	}
+	.content a:hover{
+		font-size: 33px;
+		color: #ff3300;
+	}
+	.footer{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+	}
+	.backbtn{
+		padding: 10px;
+		border-radius: 25px;
+		outline: none;
+		cursor: pointer;
+		background:none;
+		width: 200px;
+		transition-duration: 0.5s;
+		font-size: 15px
+	}
+	.backbtn:hover{
+		font-size: 18px;
+		padding:13px;
+		background:#993333;
+		color:white;
+	}
+	.heading img{
+		width:30px;
+		height:30px;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			<div class="heading">
+				<img src="https://img.icons8.com/ios-filled/2x/about.png">
+				ABOUT US
+			</div>
+			<div class="content">
+				<p><a href="#">MEMENTO</a> is a website which is used to get a reminder for the things we usually don't remember. The only thing you have to do is just to <a href="login.html">login</a> here and then set your reminder as per your dates.A reminder will be sent to your mail 6 hours before the set time and on exactly on that time reminding you about the work.</p>
+			</div>
+				<a href="/">
+					<button class="backbtn">
+						BACK TO HOME
+					</button>
+				</a>
+		</div>
+	</div>
+	<div class="footer">
+		<i>copyright 2020 &copy</i>
+	</div>
+</body>
+</html>

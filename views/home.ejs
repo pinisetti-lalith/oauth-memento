@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MEMENTO</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		body{
+			background:rgba(0 ,0 ,0 ,0.7) url("https://images.pexels.com/photos/1903702/pexels-photo-1903702.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+			background-size: cover;
+			background-blend-mode: darken;
+			height: 100vh;
+		}
+		.bigbox{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+		.container{
+			display: flex;
+			height:85vh;
+		}
+		.box2{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.clock{
+			width: 350px;
+			height: 350px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background:url('http://clipart-library.com/images/8TzKz9yRc.png');
+			background-size: cover;
+			border-radius:50%;
+			box-shadow: 0 -10px 10px rgba(265,265,265,0.25),
+						inset 0 -15px 15px rgba(255,255,255,0.25)
+		}
+		.clock::before{
+			content:'';
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			background:grey;
+			border-radius: 50%;
+			z-index: 100000;
+		}
+		.hour,
+		.min,
+		.sec{
+			position: absolute;
+		}
+		.hour, .hr{
+			width: 160px;
+			height: 160px;
+		}
+		.min, .mn{
+			width: 190px;
+			height:190px;
+		}
+		.sec, .sc{
+			width: 230px;
+			height: 230px;
+		}
+		.hr, .mn, .sc{
+			display: flex;
+			justify-content: center;
+			position: absolute;
+			border-radius: 50%;
+		}
+		.hr::before{
+			content: '';
+			position: absolute;
+			width: 8px;
+			height: 80px;
+			background:white;
+			z-index: 10;
+			border-radius: 6px 6px 0 0;
+		}
+		.mn::before{
+			content: '';
+			position: absolute;
+			width: 6px;
+			height: 100px;
+			background:white;
+			z-index: 11;
+			border-radius: 6px 6px 0 0;
+		}
+		.sc::before{
+			content: '';
+			position: absolute;
+			width: 2px;
+			height: 150px;
+			background:white;
+			z-index: 12;
+			border-radius: 6px 6px 0 0;
+		}
+		.box1{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border-right: solid grey 2px;
+			padding: 100px;
+			padding-left:5px;
+		}
+		.box2{
+			padding: 100px;
+		}
+		.t1, .t2, .t3{
+			padding:20px;
+			color:white;
+			font-family: 'Rajdhani', sans-serif;
+			font-size: 80px;
+		}
+		.t1{
+			padding-right: 350px;
+		}
+		.t2{
+			padding-right:280px;
+		}
+		.bigcont{
+			height: 90vh;
+		}
+		.navbar{
+			display: flex;
+			justify-content: flex-end;
+		}
+		.btn{
+			padding: 10px;
+			margin-right:20px;
+			margin-top: 10px;
+			cursor: pointer;
+			border-radius:20px;
+			outline: none;
+			background:none;
+			transition-duration: 0.5s;
+		}
+		.btn a{
+			text-decoration: none;
+			color:white;
+		}
+		.btn:hover{
+			background:brown;
+			font-size: 18px;
+		}
+		.about, .contact{
+			padding:15px;
+			padding-top:20px;
+		}
+		.contact{
+			padding-right:18px;
+		}
+		.about a{
+			text-decoration: none;
+			color: white;
+		}
+		.contact a{
+			text-decoration: none;
+			color:white;
+		}
+		.about:hover{
+			font-size: 18px;
+			text-decoration: white underline;
+		}
+		.contact:hover{
+			font-size: 18px;
+			text-decoration: white underline;
+		}
+		.foot{
+			color:grey;
+			font-size: 10px;
+		}
+		.footer{
+			display: flex;
+			justify-content: flex-end;
+		}
+		@media screen and (min-width: 600px) and (max-width:1295px){
+			.bigbox{
+				display: flex;
+				flex-direction: column;
+			}
+			.container{
+				display: flex;
+				flex-direction: column;
+			}
+			.box1{
+				border-right:none;
+				padding-right: 10px;
+			}
+			.t1{
+				padding-right: 150px
+				padding-left:50px;
+			}
+			.t2{
+				padding-right:150px;
+				padding-left: 50px;
+			}
+		}
+		@media screen and (max-width: 600px){
+			.t1, .t2, .t3{
+				font-size: 50px;
+			}
+			.bigbox{
+				display: flex;
+				flex-direction: column;
+			}
+			.container{
+				display: flex;
+				flex-direction: column;
+			}
+			.box1{
+				border-right:none;
+				padding-right: 10px;
+			}
+			.t1{
+				padding-right: 200px;
+			}
+			.t2{
+				padding-right: 180px;
+			}
+			.box2{
+				padding:10px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="bigcont">
+		<div class="navbar">
+			<div class="about">
+				<a href="/about">About Us</a>
+			</div>
+			<div class="contact">
+				<a href="/contact">Contact Us</a>
+			</div>
+			<!-- < -->
+			<ul>
+				<% if (username) { %>
+			<button class="btn"><a href="/auth/logout">Log out</a></button>
+			<% } else { %>
+			<button class="btn"><a href="/auth/login">Login</a></button>
+			<% } %>
+					<button class="btn"><a href="/profile">Profile</a></button>
+			</ul>
+			<!--  -->
+			<!-- <button class="btn">
+				<a href="login.html">Login/signup</a>
+			</button> -->
+
+		</div>
+		<div class="bigbox">
+			<div class="container">
+				<div class="box1">
+					<p class="t1">MARK</p>
+					<p class="t2">YOUR</p>
+					<p class="t3">HAPPINESS</p>
+				</div>
+				<div class="box2">
+					<div class="clock">
+						<div class="hour">
+							<div class="hr" id="hr"></div>
+						</div>
+						<div class="min">
+							<div class="mn" id="mn"></div>
+						</div>
+						<div class="sec">
+							<div class="sc" id="sc"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<i class="foot">Copyright 2020 &copy</i>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		const deg=6;
+		const hr=document.querySelector("#hr");
+		const mn=document.querySelector("#mn");
+		const sc=document.querySelector("#sc");
+		setInterval(()=>{
+			let day=new Date();
+			let hh=day.getHours()*30;
+			let mm=day.getMinutes()*deg;
+			let ss=day.getSeconds()*deg;
+			hr.style.transform=`rotateZ(${hh+(mm/12)}deg)`;
+			mn.style.transform=`rotateZ(${mm}deg)`;
+			sc.style.transform=`rotateZ(${ss}deg)`;
+		})
+
+	</script>
+</body>
+</html>

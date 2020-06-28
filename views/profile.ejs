@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MEMENTO</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	*{
+		padding: 0;
+		margin:0;
+	}
+	body{
+		background:url("https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+		background-size: cover;
+		height:100vh;
+	}
+	.navbar img{
+		height:50px;
+		width:50px;
+		border-radius: 50%;
+	}
+	.navbar{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding-right: 20px
+		color:white;
+		height: 8vh
+	}
+	.text, .name{
+		color:black;
+		font-size: 20px;
+	}
+	.navbar a{
+		padding:25px;
+		text-decoration: none;
+		font-size: 20px;
+		color: white;
+		transition-duration: 0.5s;
+	}
+	.navbar a:hover{
+		text-decoration: #cc0066 underline;
+		color:#cc0066;
+	}
+	.container{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 92vh;
+	}
+	.box{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.heading{
+		padding:15px;
+		font-family: 'Rajdhani', sans-serif;
+		font-size: 65px;
+	}
+	.buttons{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.button1, .button2{
+		padding:15px;
+		background:none;
+		border-radius: 25px;
+		outline: none;
+		width:200px;
+		cursor: pointer;
+		transition-duration: 0.5s;
+	}
+	.button1 a{
+		padding:20px;
+	}
+	.button2 a{
+		padding:20px;
+	}
+	.buttons a{
+		margin:50px;
+	}
+	.button1:hover{
+		background:#009999;
+		padding:20px;
+		font-size: 18px;
+	}
+	.button2:hover{
+		background:#009999;
+		padding:20px;
+		font-size: 18px;
+	}
+@media screen and (max-width:760px){
+	.heading{
+		font-size: 35px;
+	}
+	.buttons a{
+		margin:20px;
+	}
+	.button1{
+		padding:10px;
+		width:150px;
+	}
+	.button2{
+		padding:10px;
+		width:150px;
+	}
+	.navbar a{
+		padding:10px;
+	}
+}
+	</style>
+</head>
+<body>
+	<div class="navbar">
+
+			<p class="text">
+
+				<% if (user) { %>
+				<li><a href="/auth/logout">Log out</a></li>
+				<% } else { %>
+				<li><a href="/auth/login">Login</a></li>
+				<% } %>
+					<li><a href="/">Homepage</a></li>
+				<a href="#"><%= user.username %></a>
+			</p>
+			<a href="#"><img src= <%= user.thumbnail %>></a>
+	</div>
+
+	<div class="container">
+		<div class="box">
+			<div class="text">
+				<p class="heading">WE REMIND YOUR DAYS</p>
+			</div>
+			<div class="buttons">
+					<a href="#">
+						<button class="button1">
+								SET REMINDER!
+						</button>
+					</a>
+					<a href="#">
+						<button class="button2">
+								PLANNED DAYS
+						</button>
+					</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
